@@ -1,0 +1,82 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="webCs.SiteMaster" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head runat="server">
+   <title></title>
+   <link href="css/alertify.min.css" rel="stylesheet" type="text/css" />
+   <link href="css/bootstrap-datetimepicker.css" rel="stylesheet" type="text/css" />
+   <link href="css/bootstrap-multiselect.css" rel="stylesheet" type="text/css" />
+   <link href="css/bootstrap-theme.css" rel="stylesheet" type="text/css" />
+   <link href="css/bootstrap.css" rel="stylesheet" type="text/css" />
+   <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+   <link href="css/checkboxbootstrap.css" rel="stylesheet" type="text/css" />
+   <link href="css/default.min.css" rel="stylesheet" type="text/css" />
+   <link href="css/fileinput.min.css" rel="stylesheet" type="text/css" />
+   <link href="css/font-awesome.css" rel="stylesheet" type="text/css" />
+      <!--JS-->
+   <script src="js/jquery-2.1.0.min.js" type="text/javascript"></script>
+   <script src="js/alertify.min.js" type="text/javascript"></script>
+   <script src="js/bootbox.min.js" type="text/javascript"></script>
+   <script src="js/moment-with-locales.js" type="text/javascript"></script>
+   <script src="js/bootstrap-datetimepicker.js" type="text/javascript"></script>
+   <script src="js/bootstrap-multiselect.js" type="text/javascript"></script>
+   <script src="js/bootstrap.js" type="text/javascript"></script>
+   <script src="js/bootstrap.min.js" type="text/javascript"></script>
+   <script src="js/enscroll-0.6.2.min.js" type="text/javascript"></script>
+  <%-- <script src="js/es.js" type="text/javascript"></script>--%>
+   <script src="js/fileinput.min.js" type="text/javascript"></script>
+   <%-- <script src="js/jquery-1.4.1.js" type="text/javascript"></script>--%>
+   <script src="js/jquery.maskedinput.js" type="text/javascript"></script>
+   <script src="js/modernizr-2.6.2.js" type="text/javascript"></script>
+   <script src="js/prefixfree.min.js" type="text/javascript"></script>
+   <script src="js/utils.js" type="text/javascript"></script>
+   <!--JS-->
+   <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+   </asp:ContentPlaceHolder>
+</head>
+<body>
+   <form runat="server">
+   <header></header>
+   <nav></nav>
+   <div class="main">
+      <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+   </div>
+   <div class="clear">
+   </div>
+   <footer>
+    </footer>
+   <!--Notificaciones-->
+   <div runat="server" id="divNotifications" class="col-sm-7 col-md-7 col-lg-7" style="float: none;
+      margin: 0 auto;">
+   </div>
+   <div id="errorModal" class="modal modal-wide fade" role="dialog">
+      <div class="modal-dialog modal-md">
+         <!-- Modal content-->
+         <div class="modal-content">
+            <div class="modal-header alert alert-block alert-danger ">
+               <button type="button" class="close" data-dismiss="modal">
+                  &times;</button>
+               <h4 class="modal-title">
+                  <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>&nbsp;
+                  Alerta
+                  <asp:Label runat="server" ID="Label4"></asp:Label></h4>
+            </div>
+            <div class="modal-body">
+               <center>
+               </center>
+               <div runat="server" id="divDialog">
+               </div>
+            </div>
+            <div class="modal-footer">
+               <button type="button" class="btn btn-default" data-dismiss="modal">
+                  Cerrar</button>
+            </div>
+         </div>
+      </div>
+   </div>
+   <!--Notificaciones-->
+   </form>
+
+</body>
+</html>

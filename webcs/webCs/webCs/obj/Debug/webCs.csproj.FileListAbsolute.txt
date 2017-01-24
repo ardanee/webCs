@@ -1,0 +1,4 @@
+C:\Sistemas San Diego\webcs\webCs\webCs\bin\webCs.dll
+C:\Sistemas San Diego\webcs\webCs\webCs\bin\webCs.pdb
+C:\Sistemas San Diego\webcs\webCs\webCs\obj\Debug\webCs.dll
+C:\Sistemas San Diego\webcs\webCs\webCs\obj\Debug\webCs.pdb

@@ -1,0 +1,22 @@
+24/01/2017 13:31:32,,consultarTabla,   en webCs.ClsDb.consultarTabla(String sqlQuery) en C:\Sistemas San Diego\webcs\webCs\webCs\DAL\ClsDb.cs:línea 155
+   en webCs._Default.Page_Load(Object sender, EventArgs e) en C:\Sistemas San Diego\webcs\webCs\webCs\Default.aspx.cs:línea 19
+,Error:El nombre de objeto 'TblSasss' no es válido.24/01/2017 14:25:17,forastero,RegisterColumnName,   en System.Data.DataColumnCollection.RegisterColumnName(String name, DataColumn column)
+   en System.Data.DataColumnCollection.BaseAdd(DataColumn column)
+   en System.Data.DataColumnCollection.AddAt(Int32 index, DataColumn column)
+   en System.Data.DataColumnCollection.Add(String columnName)
+   en webCs._Default.Page_Load(Object sender, EventArgs e) en C:\Sistemas San Diego\webcs\webCs\webCs\Default.aspx.cs:línea 19
+,Error:La columna 'Columna2' ya pertenece a DataTable.24/01/2017 14:25:24,forastero,RegisterColumnName,   en System.Data.DataColumnCollection.RegisterColumnName(String name, DataColumn column)
+   en System.Data.DataColumnCollection.BaseAdd(DataColumn column)
+   en System.Data.DataColumnCollection.AddAt(Int32 index, DataColumn column)
+   en System.Data.DataColumnCollection.Add(String columnName)
+   en webCs._Default.Page_Load(Object sender, EventArgs e) en C:\Sistemas San Diego\webcs\webCs\webCs\Default.aspx.cs:línea 19
+,Error:La columna 'Columna2' ya pertenece a DataTable.24/01/2017 14:28:32,forastero,RegisterColumnName,   en System.Data.DataColumnCollection.RegisterColumnName(String name, DataColumn column)
+   en System.Data.DataColumnCollection.BaseAdd(DataColumn column)
+   en System.Data.DataColumnCollection.AddAt(Int32 index, DataColumn column)
+   en System.Data.DataColumnCollection.Add(String columnName)
+   en webCs._Default.Page_Load(Object sender, EventArgs e) en C:\Sistemas San Diego\webcs\webCs\webCs\Default.aspx.cs:línea 19,Error:La columna 'Columna2' ya pertenece a DataTable.
+24/01/2017 14:28:41,forastero,RegisterColumnName,   en System.Data.DataColumnCollection.RegisterColumnName(String name, DataColumn column)
+   en System.Data.DataColumnCollection.BaseAdd(DataColumn column)
+   en System.Data.DataColumnCollection.AddAt(Int32 index, DataColumn column)
+   en System.Data.DataColumnCollection.Add(String columnName)
+   en webCs._Default.Page_Load(Object sender, EventArgs e) en C:\Sistemas San Diego\webcs\webCs\webCs\Default.aspx.cs:línea 19,Error:La columna 'Columna2' ya pertenece a DataTable.
