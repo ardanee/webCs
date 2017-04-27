@@ -9,7 +9,7 @@ namespace webCs
 {
    public partial class _Default : System.Web.UI.Page
    {
-      private clsHelper help = new clsHelper();
+      
       protected void Page_Load(object sender, EventArgs e)
       {
          try
@@ -22,10 +22,10 @@ namespace webCs
            x.Rows.Add("Valor7", "Valor8", "Valor9");
             //x = clsIdiomas.consultarTabla("SELECT 1 FROM TblSasss");
 
-           Response.Write(help.dataTable2Json(x));
+           Response.Write(clsHelper.dataTable2Json(x));
          }
          catch (Exception ex) {
-            help.mostrarError ("Load",ex, this);
+                clsHelper.mostrarError ("Load",ex, this);
          }
       }
    }

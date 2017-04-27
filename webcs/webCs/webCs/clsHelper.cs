@@ -12,14 +12,14 @@ using System.Web.Script.Serialization;
 
 namespace webCs
 {
-   public class clsHelper
+   public static class clsHelper
    {
       #region Notificaciones
 
       public enum tipoMensaje { informacion, alerta, err, msgbx };
       public enum tipoAlerta { primary, info, success, warning, danger };
 
-      public void mostrarError(string metodo, Exception ex, System.Web.UI.Page pagina, Boolean tieneMasterPage = true)
+      public static void mostrarError(string metodo, Exception ex, System.Web.UI.Page pagina, Boolean tieneMasterPage = true)
       {
          /*Muestra un mensaje de error en un modal de bootstrap
          Autor:AR
@@ -65,7 +65,7 @@ namespace webCs
       }
 
 
-      public void mensaje(string texto, System.Web.UI.Page pagina, tipoMensaje tipo = tipoMensaje.informacion, Boolean remplazarComillas = true)
+      public static void mensaje(string texto, System.Web.UI.Page pagina, tipoMensaje tipo = tipoMensaje.informacion, Boolean remplazarComillas = true)
       {
          /*Muestra una alerta con alertify
          Autor:AR*/
@@ -110,7 +110,7 @@ namespace webCs
 
 
 
-      public void mostrarAlerta(string mensaje, System.Web.UI.Page pagina, tipoAlerta tipoAlerta = tipoAlerta.info, Boolean tieneMasterPage = true)
+      public static  void mostrarAlerta(string mensaje, System.Web.UI.Page pagina, tipoAlerta tipoAlerta = tipoAlerta.info, Boolean tieneMasterPage = true)
       {
          StringBuilder html = new StringBuilder();
          LiteralControl control = new LiteralControl();
@@ -142,7 +142,7 @@ namespace webCs
 
       #endregion
 
-      private void escribeError(string mensaje, string archivoCodigo, string metodo)
+      private static void escribeError(string mensaje, string archivoCodigo, string metodo)
       {
          try
          {
@@ -167,7 +167,7 @@ namespace webCs
       }
 
       #region exportarExcel
-      public void exportarExcel(GridView grd, System.Web.HttpResponse response)
+      public static void exportarExcel(GridView grd, System.Web.HttpResponse response)
       {
          /*
           Exporta a excel un objeto GridView
@@ -202,7 +202,7 @@ namespace webCs
          { throw; }
       }
 
-      public void exportarExcel(DataTable dataTable, System.Web.HttpResponse response)
+      public static void exportarExcel(DataTable dataTable, System.Web.HttpResponse response)
       {
          StringBuilder sb = new StringBuilder();
          System.IO.StringWriter sw = new System.IO.StringWriter(sb);
@@ -238,7 +238,7 @@ namespace webCs
          }
       }
 
-      public void exportarExcel(string htmlString, System.Web.HttpResponse response)
+      public static void exportarExcel(string htmlString, System.Web.HttpResponse response)
       {
          StringBuilder sb = new StringBuilder();
          System.IO.StringWriter sw = new System.IO.StringWriter(sb);
@@ -272,7 +272,7 @@ namespace webCs
       }
       #endregion
 
-      public string dataTable2Json(DataTable table)
+      public static string dataTable2Json(DataTable table)
       {
          string res = string.Empty;
          try
@@ -301,24 +301,75 @@ namespace webCs
        
       }
 
+        public static Boolean tieneDato(TextBox field)
+        {
+            Boolean res = true;
+            try
+            {
+                if (string.IsNullOrEmpty(field.Text.Trim()))
+                {
+                    res = false;
+                }
+            }
+            catch (Exception)
+            { throw; }
+            return res;
+        }
 
-      public Boolean validarCampoObligatorio(Object xCampo , Label Mensage ) 
-      {
-         Boolean res = true;
-         try{
-          Convert.ChangeType(xCampo,xCampo.GetType());
-         if (Convert.ChangeType(xCampo,xCampo.GetType()).Text) {
-            Mensage.Text = "El Campo " & Mid(xCampo.ID.ToString, 4, Len(xCampo.id.ToString)) & " es requerido para este proceso"
-            xCampo.SetFocus()
-            Valid_CampoObligatorio = False
-            xCampo.focus()
-        End If
-         }
-         catch(Exception){
-         }
-      }
+        public static Boolean tieneDato(DropDownList field)
+        {
+            Boolean res = true;
+            try
+            {
+                if (string.IsNullOrEmpty(field.Text.Trim())) res = false;
+                if (string.IsNullOrEmpty(field.SelectedValue.ToString())) res = false;
+                if (string.IsNullOrEmpty(field.SelectedValue.ToString())) res = false;
+            }
+            catch (Exception)
+            { throw; }
+            return res;
+        }
 
-      public Boolean fNull(string xstring)
+        public static Boolean camposObligatorios(Page pagina,params Control[] controles)
+        {
+            Boolean res = true;
+            try
+            {
+                foreach (Control vControl in controles)
+                {
+
+                    if (vControl.GetType().Name.ToUpper() == "TextBox".ToUpper())
+                    {
+                        if (!tieneDato((TextBox)vControl))
+                        {
+                            
+                           mensaje( "El campo " + vControl.ID.ToUpper().Replace("TXT", "") + " es requerido para el proceso",pagina,tipoMensaje.alerta);
+                            vControl.Focus();
+                            res = false;
+                            break;
+                        }
+                    }
+                    else if (vControl.GetType().Name.ToUpper() == "ComboBox".ToUpper())
+                    {
+                        if (!tieneDato((DropDownList)vControl))
+                        {
+                            mensaje("El campo " + vControl.ID.ToUpper().Replace("CBO", "") + " es requerido para el proceso",pagina,tipoMensaje.alerta);
+                            vControl.Focus();
+                            res = false;
+                            break;
+                        }
+                    }
+             
+                }//foreach
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            return res;
+        }
+
+        public static Boolean fNull(string xstring)
       {
          try
          {
@@ -342,5 +393,20 @@ namespace webCs
 
       }
 
-   }//end class
+        public static bool isDate(string date)
+        {
+            DateTime Temp;
+            return (DateTime.TryParse(date, out Temp) && date.Length >= 10);
+        }
+
+        public static bool IsNumeric(this string s)
+        {
+            float output;
+            return float.TryParse(s, out output);
+        }
+
+
+   
+
+}//end class
 }
