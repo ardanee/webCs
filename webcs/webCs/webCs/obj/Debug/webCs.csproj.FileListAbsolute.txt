@@ -5,6 +5,5 @@ C:\Sistemas San Diego\webcs\webCs\webCs\obj\Debug\webCs.pdb
 C:\gitRepos\webCs\webcs\webCs\webCs\obj\Debug\webCs.csprojResolveAssemblyReference.cache
 C:\gitRepos\webCs\webcs\webCs\webCs\obj\Debug\webCs.dll
 C:\gitRepos\webCs\webcs\webCs\webCs\obj\Debug\webCs.pdb
-C:\gitRepos\webCs\webcs\webCs\webCs\bin\webCs.dll.config
 C:\gitRepos\webCs\webcs\webCs\webCs\bin\webCs.dll
 C:\gitRepos\webCs\webcs\webCs\webCs\bin\webCs.pdb
