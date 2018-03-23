@@ -135,6 +135,8 @@
     <Content Include="Default.aspx" />
     <Content Include="Global.asax" />
     <Content Include="js\jquery-1.4.1.js" />
+    <Content Include="pages\WebService1.asmx" />
+    <Content Include="pages\WsClient.aspx" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -191,6 +193,17 @@
     </Compile>
     <Compile Include="pages\WebForm1.aspx.designer.cs">
       <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pages\WebService1.asmx.cs">
+      <DependentUpon>WebService1.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="pages\WsClient.aspx.cs">
+      <DependentUpon>WsClient.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\WsClient.aspx.designer.cs">
+      <DependentUpon>WsClient.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Master.cs">
